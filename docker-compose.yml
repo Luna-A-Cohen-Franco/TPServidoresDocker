@@ -1,0 +1,19 @@
+networks:
+  aplicacion:
+
+services:
+  express-app:
+    build: 
+      context: ./apiTorneoTenis 
+    ports:
+      - "3000:3000"  
+    networks:
+      - aplicacion
+
+  angular-app:
+    build:  
+      context: ./app 
+    ports:
+      - "4000:4000" 
+    networks:
+      - aplicacion 
